@@ -1,0 +1,31 @@
+<resources>
+
+    <style name="Theme.DoVibe" parent="Theme.Material3.Dark.NoActionBar">
+
+        <item name="colorPrimary">#8B84FF</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+
+        <item name="colorSecondary">#8B84FF</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+
+        <item name="colorSurface">#1E1E2E</item>
+        <item name="colorOnSurface">#FFFFFF</item>
+
+        <item name="android:colorBackground">#12121E</item>
+
+        <item name="colorPrimaryContainer">#8B84FF</item>
+        <item name="colorOnPrimaryContainer">#FFFFFF</item>
+
+    </style>
+    <style name="CalendarDateText" parent="android:Widget.TextView">
+        <item name="android:textColor">#E8E6FF</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="CalendarWeekText" parent="android:Widget.TextView">
+        <item name="android:textColor">#A09CB0</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+
+</resources>

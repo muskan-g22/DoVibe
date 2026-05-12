@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:attr/windowBackground"
+    tools:context=".MainActivity">
+
+    <!-- ══ HEADER ══════════════════════════════════════════════ -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/header_bg"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="0dp">
+
+        <!-- Title row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dovibe"
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="12sp"
+                    android:letterSpacing="0.15"/>
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="My Tasks"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22sp"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="right">
+
+            <ImageButton
+                android:id="@+id/btnProfile"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:background="@drawable/circle_white_alpha"
+                android:src="@android:drawable/ic_menu_myplaces"
+                android:tint="#FFFFFF"
+                android:contentDescription="Profile"/>
+                <TextView
+                    android:id="@+id/tvTitle1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" MY PROFILE"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Search bar -->
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/search_bg"
+            android:drawableStart="@android:drawable/ic_menu_search"
+            android:drawablePadding="8dp"
+            android:drawableTint="#AAFFFFFF"
+            android:hint="Search tasks…"
+            android:textColorHint="#AAFFFFFF"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:inputType="text"
+            android:imeOptions="actionSearch"/>
+
+        <!-- Category tabs -->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@color/header_bg"
+            app:tabTextColor="#AAFFFFFF"
+            app:tabSelectedTextColor="#FFFFFF"
+            app:tabIndicatorColor="#FFFFFF"
+            app:tabIndicatorHeight="3dp"
+            app:tabMode="fixed"
+            app:tabGravity="fill"
+            app:tabTextAppearance="@android:style/TextAppearance.Small"/>
+
+    </LinearLayout>
+
+    <!-- ══ PROGRESS ════════════════════════════════════════════ -->
+    <LinearLayout
+        android:id="@+id/layoutProgress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="?attr/colorSurface"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:elevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="6dp">
+
+            <TextView
+                android:id="@+id/tvProgressLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0 of 0 done"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:id="@+id/tvProgressPercent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0%"
+                android:textColor="@color/purple_primary"
+                android:textSize="12sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="7dp"
+            android:max="100"
+            android:progress="0"
+            android:progressTint="@color/purple_primary"
+            android:progressBackgroundTint="@color/purple_track"/>
+
+    </LinearLayout>
+
+    <!-- ══ TASK LIST ════════════════════════════════════════════ -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="8dp"
+        android:clipToPadding="false"
+        tools:listitem="@layout/item_task"/>
+
+    <!-- ══ ADD TASK BUTTON ═══════════════════════════════════════ -->
+    <Button
+        android:id="@+id/btnAddTask"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/btn_primary_bg"
+        android:text="＋  Add New Task"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:textStyle="bold"/>
+
+    <!-- ══ BOTTOM NAV ════════════════════════════════════════════ -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorSurface"
+        app:labelVisibilityMode="labeled"
+        app:itemIconTint="@color/bottom_nav_item_colors"
+        app:itemTextColor="@color/bottom_nav_item_colors"
+        app:menu="@menu/bottom_nav_menu"/>
+
+</LinearLayout>

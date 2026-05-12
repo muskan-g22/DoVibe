@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_todo"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="To Do" />
+
+    <item
+        android:id="@+id/nav_calendar"
+        android:icon="@android:drawable/ic_menu_my_calendar"
+        android:title="Calendar" />
+
+    <item
+        android:id="@+id/nav_reminders"
+        android:icon="@drawable/ic_notification"
+        android:title="Reminders" />
+
+    <item
+        android:id="@+id/nav_stopwatch"
+        android:icon="@drawable/outline_alarm_pause_24"
+        android:title="Stopwatch" />
+
+<!--    <item-->
+<!--        android:id="@+id/nav_profile"-->
+<!--        android:icon="@android:drawable/ic_menu_myplaces"-->
+<!--        android:title="Profile" />-->
+
+
+</menu>

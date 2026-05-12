@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:attr/windowBackground">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/header_bg"
+        android:gravity="center"
+        android:paddingTop="24dp"
+        android:paddingBottom="24dp">
+
+        <ImageView
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@android:drawable/ic_menu_myplaces"
+            android:tint="#FFFFFF"
+            android:background="@drawable/circle_white_alpha"
+            android:padding="16dp"
+            android:contentDescription="Avatar"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Profile"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingTop="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dovibe · Productivity overview"
+            android:textColor="#CCFFFFFF"
+            android:textSize="12sp"
+            android:paddingTop="2dp"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Stats section label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STATISTICS"
+                android:textSize="11sp"
+                android:textColor="?android:attr/textColorSecondary"
+                android:letterSpacing="0.1"
+                android:paddingBottom="10dp"/>
+
+            <!-- Row 1 -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="10dp">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical"
+                    android:background="@drawable/task_card_bg" android:padding="16dp"
+                    android:gravity="center" android:layout_marginEnd="5dp" android:elevation="2dp">
+                    <TextView android:id="@+id/tvTotalTasks"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="0" android:textSize="34sp" android:textStyle="bold" android:textColor="@color/purple_primary"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Total Tasks" android:textSize="12sp"
+                        android:textColor="?android:attr/textColorSecondary"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical"
+                    android:background="@drawable/task_card_bg" android:padding="16dp"
+                    android:gravity="center" android:layout_marginStart="5dp" android:elevation="2dp">
+                    <TextView android:id="@+id/tvDoneTasks"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="0" android:textSize="34sp" android:textStyle="bold" android:textColor="#22C55E"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="✅ Completed" android:textSize="12sp"
+                        android:textColor="?android:attr/textColorSecondary"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Row 2 -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="10dp">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical"
+                    android:background="@drawable/task_card_bg" android:padding="16dp"
+                    android:gravity="center" android:layout_marginEnd="5dp" android:elevation="2dp">
+                    <TextView android:id="@+id/tvPendingTasks"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="0" android:textSize="34sp" android:textStyle="bold" android:textColor="#F59E0B"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="⏳ Pending" android:textSize="12sp"
+                        android:textColor="?android:attr/textColorSecondary"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical"
+                    android:background="@drawable/task_card_bg" android:padding="16dp"
+                    android:gravity="center" android:layout_marginStart="5dp" android:elevation="2dp">
+                    <TextView android:id="@+id/tvUrgentTasks"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="0" android:textSize="34sp" android:textStyle="bold" android:textColor="#E24B4A"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="🚨 Urgent" android:textSize="12sp"
+                        android:textColor="?android:attr/textColorSecondary"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Row 3 -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="24dp">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical"
+                    android:background="@drawable/task_card_bg" android:padding="16dp"
+                    android:gravity="center" android:layout_marginEnd="5dp" android:elevation="2dp">
+                    <TextView android:id="@+id/tvWorkTasks"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="0" android:textSize="34sp" android:textStyle="bold" android:textColor="#5B21B6"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="💼 Work" android:textSize="12sp"
+                        android:textColor="?android:attr/textColorSecondary"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical"
+                    android:background="@drawable/task_card_bg" android:padding="16dp"
+                    android:gravity="center" android:layout_marginStart="5dp" android:elevation="2dp">
+                    <TextView android:id="@+id/tvPersonalTasks"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="0" android:textSize="34sp" android:textStyle="bold" android:textColor="#065F46"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="🏠 Personal" android:textSize="12sp"
+                        android:textColor="?android:attr/textColorSecondary"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Settings section label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SETTINGS"
+                android:textSize="11sp"
+                android:textColor="?android:attr/textColorSecondary"
+                android:letterSpacing="0.1"
+                android:paddingBottom="10dp"/>
+
+            <!-- Settings card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/task_card_bg"
+                android:elevation="2dp">
+
+                <!-- Dark Mode row -->
+                <LinearLayout
+                    android:id="@+id/rowDarkMode"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:background="?attr/selectableItemBackground">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="🌙  Dark Mode"
+                        android:textSize="15sp"
+                        android:textColor="?android:attr/textColorPrimary"/>
+                    <Switch
+                        android:id="@+id/switchDarkMode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:thumbTint="@color/purple_primary"
+                        android:trackTint="#C5C3FF"
+                        android:clickable="false"
+                        android:focusable="false"/>
+                </LinearLayout>
+
+                <!-- Divider -->
+                <View android:layout_width="match_parent" android:layout_height="0.5dp"
+                    android:background="?android:attr/listDivider"
+                    android:layout_marginStart="16dp"/>
+
+                <!-- Notifications row -->
+                <LinearLayout
+                    android:id="@+id/rowNotifications"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:background="?attr/selectableItemBackground">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="🔔  Notification Settings"
+                        android:textSize="15sp"
+                        android:textColor="?android:attr/textColorPrimary"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="›"
+                        android:textSize="20sp"
+                        android:textColor="?android:attr/textColorSecondary"/>
+                </LinearLayout>
+
+                <!-- Divider -->
+                <View android:layout_width="match_parent" android:layout_height="0.5dp"
+                    android:background="?android:attr/listDivider"
+                    android:layout_marginStart="16dp"/>
+
+                <!-- About row -->
+                <LinearLayout
+                    android:id="@+id/rowAbout"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:background="?attr/selectableItemBackground">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="ℹ️  About DoVibe"
+                        android:textSize="15sp"
+                        android:textColor="?android:attr/textColorPrimary"/>
+                    <TextView
+                        android:id="@+id/tvAppVersion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="v1.0"
+                        android:textSize="13sp"
+                        android:textColor="?android:attr/textColorSecondary"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom nav -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorSurface"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu"/>
+
+</LinearLayout>

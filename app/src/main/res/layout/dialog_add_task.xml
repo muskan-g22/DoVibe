@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorSurface">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Task Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Task Title"
+            android:textSize="12sp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:paddingBottom="4dp"/>
+
+        <EditText
+            android:id="@+id/etTaskTitle"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/input_bg"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:hint="e.g. Team standup meeting"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textColorHint="?android:attr/textColorHint"
+            android:textSize="14sp"
+            android:inputType="textCapSentences"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Category -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Category"
+            android:textSize="12sp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:paddingBottom="4dp"/>
+
+        <Spinner
+            android:id="@+id/spCategory"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/input_bg"
+            android:popupBackground="?attr/colorSurface"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Date -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date"
+            android:textSize="12sp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:paddingBottom="4dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/input_bg"
+            android:paddingStart="14dp"
+            android:paddingEnd="8dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/tvSelectedDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Today"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/purple_primary"/>
+
+            <Button
+                android:id="@+id/btnPickDate"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="Change"
+                android:textSize="11sp"
+                android:backgroundTint="#EDE9FE"
+                android:textColor="@color/purple_primary"/>
+        </LinearLayout>
+
+        <!-- Time -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time"
+            android:textSize="12sp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:paddingBottom="4dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/input_bg"
+            android:paddingStart="14dp"
+            android:paddingEnd="8dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/tvSelectedTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="9:00 AM"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/purple_primary"/>
+
+            <Button
+                android:id="@+id/btnPickTime"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="Change"
+                android:textSize="11sp"
+                android:backgroundTint="#EDE9FE"
+                android:textColor="@color/purple_primary"/>
+        </LinearLayout>
+
+        <!-- Repeat -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Repeat"
+            android:textSize="12sp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:paddingBottom="6dp"/>
+
+        <RadioGroup
+            android:id="@+id/rgRepeat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <RadioButton
+                android:id="@+id/rbOnce"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Once"
+                android:checked="true"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="12sp"
+                android:buttonTint="#6C63FF"/>
+
+            <RadioButton
+                android:id="@+id/rbDaily"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Daily"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="12sp"
+                android:buttonTint="#6C63FF"/>
+
+            <RadioButton
+                android:id="@+id/rbWeekly"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Weekly"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="12sp"
+                android:buttonTint="#6C63FF"/>
+
+            <RadioButton
+                android:id="@+id/rbCustom"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Custom"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="12sp"
+                android:buttonTint="#6C63FF"/>
+        </RadioGroup>
+
+        <!-- Custom days -->
+        <LinearLayout
+            android:id="@+id/layoutCustomDays"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:background="@drawable/input_bg"
+            android:padding="8dp"
+            android:layout_marginBottom="12dp">
+
+            <CheckBox android:id="@+id/cbMon" android:layout_width="0dp"
+                android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="M" android:textSize="11sp"
+                android:textColor="?android:attr/textColorPrimary"
+                android:buttonTint="#6C63FF"/>
+            <CheckBox android:id="@+id/cbTue" android:layout_width="0dp"
+                android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="T" android:textSize="11sp"
+                android:textColor="?android:attr/textColorPrimary"
+                android:buttonTint="#6C63FF"/>
+            <CheckBox android:id="@+id/cbWed" android:layout_width="0dp"
+                android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="W" android:textSize="11sp"
+                android:textColor="?android:attr/textColorPrimary"
+                android:buttonTint="#6C63FF"/>
+            <CheckBox android:id="@+id/cbThu" android:layout_width="0dp"
+                android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="T" android:textSize="11sp"
+                android:textColor="?android:attr/textColorPrimary"
+                android:buttonTint="#6C63FF"/>
+            <CheckBox android:id="@+id/cbFri" android:layout_width="0dp"
+                android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="F" android:textSize="11sp"
+                android:textColor="?android:attr/textColorPrimary"
+                android:buttonTint="#6C63FF"/>
+            <CheckBox android:id="@+id/cbSat" android:layout_width="0dp"
+                android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="S" android:textSize="11sp"
+                android:textColor="?android:attr/textColorPrimary"
+                android:buttonTint="#6C63FF"/>
+            <CheckBox android:id="@+id/cbSun" android:layout_width="0dp"
+                android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="S" android:textSize="11sp"
+                android:textColor="?android:attr/textColorPrimary"
+                android:buttonTint="#6C63FF"/>
+        </LinearLayout>
+
+        <!-- Urgent flag -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/input_bg"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp">
+
+            <CheckBox
+                android:id="@+id/cbUrgent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="#E24B4A"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🚨  Mark as Urgent"
+                android:textSize="13sp"
+                android:textColor="?android:attr/textColorPrimary"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dovibe</string>
+    <string name="nav_todo">To Do</string>
+    <string name="nav_calendar">Calendar</string>
+    <string name="nav_reminders">Reminders</string>
+    <string name="nav_profile">Profile</string>
+    <string name="btn_add_task">＋  Add New Task</string>
+    <string name="search_hint">Search tasks…</string>
+    <string name="no_tasks">No tasks here 🎉</string>
+    <string name="alarm_on">🔔 Alarm ON</string>
+    <string name="alarm_off">🔕 Notify only</string>
+    <string name="channel_tasks_name">Task Reminders</string>
+    <string name="channel_tasks_desc">Alerts for your Dovibe to-do tasks</string>
+    <string name="channel_reminders_name">Event Reminders</string>
+    <string name="channel_reminders_desc">Birthday, anniversary and event alerts</string>
+</resources>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:attr/windowBackground">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/header_bg"
+        android:paddingStart="16dp" android:paddingEnd="16dp"
+        android:paddingTop="16dp" android:paddingBottom="16dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Dovibe" android:textColor="#CCFFFFFF" android:textSize="12sp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Stopwatch" android:textColor="#FFFFFF"
+            android:textSize="22sp" android:textStyle="bold"/>
+    </LinearLayout>
+
+    <!-- Clock face card -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/header_bg"
+        android:paddingBottom="32dp"
+        android:paddingTop="8dp">
+
+        <!-- Outer glow ring -->
+        <FrameLayout
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            android:layout_gravity="center">
+
+            <!-- Ring background -->
+            <View
+                android:layout_width="240dp"
+                android:layout_height="240dp"
+                android:background="@drawable/sw_ring_bg"
+                android:layout_gravity="center"/>
+
+            <!-- Inner card -->
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/sw_inner_circle">
+
+                <!-- Main time display -->
+                <TextView
+                    android:id="@+id/tvStopwatchTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00:00.00"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:fontFamily="monospace"
+                    android:letterSpacing="0.05"/>
+
+                <!-- Lap time -->
+                <TextView
+                    android:id="@+id/tvLapTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lap — 00:00.00"
+                    android:textSize="11sp"
+                    android:textColor="#AAFFFFFF"
+                    android:fontFamily="monospace"
+                    android:paddingTop="4dp"/>
+
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+    <!-- Control buttons row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingTop="24dp"
+        android:paddingBottom="16dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:background="?android:attr/windowBackground">
+
+        <!-- Lap button -->
+        <Button
+            android:id="@+id/btnLap"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:text="LAP"
+            android:textSize="11sp"
+            android:textColor="@color/purple_primary"
+            android:backgroundTint="@color/purple_light"
+            android:alpha="0.4"
+            android:enabled="false"/>
+
+        <!-- Start / Pause button (big centre) -->
+        <FrameLayout
+            android:id="@+id/btnStartPause"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:backgroundTint="@color/purple_primary"
+            android:background="@drawable/sw_fab_bg"
+            android:clickable="true"
+            android:focusable="true">
+            <TextView
+                android:id="@+id/tvStartPauseLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="▶"
+                android:textSize="28sp"
+                android:textColor="#FFFFFF"/>
+        </FrameLayout>
+
+        <!-- Reset button -->
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:text="RESET"
+            android:textSize="11sp"
+            android:textColor="@color/red_urgent"
+            android:background="@drawable/sw_reset_bg"/>
+
+    </LinearLayout>
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/card_stroke"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"/>
+
+    <!-- Laps label -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LAPS"
+        android:textSize="11sp"
+        android:textColor="@color/text_secondary"
+        android:letterSpacing="0.1"
+        android:paddingStart="20dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="4dp"/>
+
+    <!-- Laps list -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvLaps"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:clipToPadding="false"/>
+
+    <!-- Bottom nav -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorSurface"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu"/>
+
+</LinearLayout>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/task_card_bg"
+    android:layout_marginBottom="10dp"
+    android:padding="14dp"
+    android:elevation="2dp">
+
+    <!-- Row 1 : Checkbox · Title · Urgent flag -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <CheckBox
+            android:id="@+id/cbDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/purple_primary"
+            android:layout_marginEnd="10dp"/>
+
+        <TextView
+            android:id="@+id/tvTaskTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="?android:attr/textColorPrimary"
+            android:maxLines="2"
+            android:ellipsize="end"/>
+
+        <ImageView
+            android:id="@+id/ivFlag"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@android:drawable/presence_away"
+            android:tint="#E24B4A"
+            android:layout_marginStart="6dp"
+            android:visibility="gone"
+            android:contentDescription="Urgent flag"/>
+    </LinearLayout>
+
+    <!-- Row 2 : Time + Repeat · Category badge -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:paddingStart="36dp">
+
+        <TextView
+            android:id="@+id/tvDueTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="12sp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:drawableStart="@android:drawable/ic_menu_recent_history"
+            android:drawablePadding="4dp"
+            android:drawableTint="#CCCCCC"/>
+
+        <TextView
+            android:id="@+id/tvCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:background="@drawable/badge_work"/>
+    </LinearLayout>
+
+    <!-- Row 3 : Notification mode label · 3-state cycle button · Edit · Delete -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="36dp">
+
+        <!-- Tapping this label cycles through: Off → Notify → Alarm+Notify -->
+        <TextView
+            android:id="@+id/tvAlarmMode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="🔕 Off"
+            android:textSize="12sp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:padding="4dp"
+            android:background="?attr/selectableItemBackground"/>
+
+        <ImageButton
+            android:id="@+id/btnEdit"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@android:color/transparent"
+            android:src="@android:drawable/ic_menu_edit"
+            android:tint="@color/purple_primary"
+            android:contentDescription="Edit"/>
+
+        <ImageButton
+            android:id="@+id/btnDelete"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@android:color/transparent"
+            android:src="@android:drawable/ic_menu_delete"
+            android:tint="#E24B4A"
+            android:contentDescription="Delete"/>
+    </LinearLayout>
+
+</LinearLayout>

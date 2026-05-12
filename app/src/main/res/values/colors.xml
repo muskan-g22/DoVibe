@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand (never change with mode) -->
+    <color name="purple_primary">#6C63FF</color>
+    <color name="purple_track">#C5C3FF</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- Semantic — light defaults, overridden in values-night/colors.xml -->
+    <color name="background">#F2F2F7</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="purple_light">#EDE9FE</color>
+    <color name="text_primary">#1A1A2E</color>
+    <color name="text_secondary">#888780</color>
+    <color name="card_stroke">#E5E5E5</color>
+    <color name="header_bg">#6C63FF</color>
+    <color name="green_personal_bg">#D1FAE5</color>
+
+    <!-- Status (same in both modes) -->
+    <color name="red_urgent">#E24B4A</color>
+    <color name="green_done">#22C55E</color>
+    <color name="amber_pending">#F59E0B</color>
+
+    <!-- Badge text — light mode -->
+    <color name="work_text">#5B21B6</color>
+    <color name="personal_text">#065F46</color>
+    <color name="urgent_text">#991B1B</color>
+</resources>

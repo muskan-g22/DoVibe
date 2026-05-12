@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorSurface">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Title -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Title" android:textSize="12sp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:paddingBottom="4dp"/>
+        <EditText
+            android:id="@+id/etReminderTitle"
+            android:layout_width="match_parent" android:layout_height="48dp"
+            android:background="@drawable/input_bg"
+            android:paddingStart="14dp" android:paddingEnd="14dp"
+            android:hint="e.g. Mum's Birthday"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textColorHint="?android:attr/textColorHint"
+            android:textSize="14sp"
+            android:inputType="textCapSentences"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Type -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Type" android:textSize="12sp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:paddingBottom="4dp"/>
+        <Spinner
+            android:id="@+id/spReminderType"
+            android:layout_width="match_parent" android:layout_height="48dp"
+            android:background="@drawable/input_bg"
+            android:popupBackground="?attr/colorSurface"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Date -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Date (Month  ·  Day)" android:textSize="12sp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:paddingBottom="4dp"/>
+        <LinearLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="16dp">
+            <Spinner android:id="@+id/spMonth"
+                android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="3"
+                android:background="@drawable/input_bg"
+                android:popupBackground="?attr/colorSurface"
+                android:layout_marginEnd="8dp"/>
+            <Spinner android:id="@+id/spDay"
+                android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="2"
+                android:background="@drawable/input_bg"
+                android:popupBackground="?attr/colorSurface"/>
+        </LinearLayout>
+
+        <!-- Time -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Time" android:textSize="12sp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:paddingBottom="4dp"/>
+        <LinearLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+            <TextView android:id="@+id/tvReminderTime"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="9:00 AM" android:textSize="16sp" android:textStyle="bold"
+                android:textColor="@color/purple_primary"/>
+            <Button android:id="@+id/btnPickReminderTime"
+                android:layout_width="wrap_content" android:layout_height="38dp"
+                android:text="Pick Time" android:textSize="12sp"
+                android:backgroundTint="#EDE9FE" android:textColor="@color/purple_primary"/>
+        </LinearLayout>
+
+        <!-- Repeat -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Repeat" android:textSize="12sp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:paddingBottom="6dp"/>
+        <RadioGroup
+            android:id="@+id/rgReminderRepeat"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton android:id="@+id/rbYearly"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="Every Year" android:checked="true"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="13sp" android:buttonTint="#6C63FF"/>
+            <RadioButton android:id="@+id/rbOnceReminder"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="Just Once"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="13sp" android:buttonTint="#6C63FF"/>
+        </RadioGroup>
+
+    </LinearLayout>
+</ScrollView>
